@@ -33,7 +33,7 @@ void ofApp::update() {
     int totalAge = 0;
     maxCellAge = 0;
 
-    // Calculate next generation
+    // Calculate next generation - please no more gen Zs ;) 
     for (int x = 0; x < gridWidth; x++) {
         for (int y = 0; y < gridHeight; y++) {
 
@@ -53,7 +53,7 @@ void ofApp::update() {
             }
 
             // Apply rules
-            if (currentGrid[x][y] != -1) { // Alive
+            if (currentGrid[x][y] != -1) { // I'm Alive!!!
                 if (neighbors == 2 || neighbors == 3) {
                     nextGrid[x][y] = currentGrid[x][y] + 1; // Increment age
                     totalAge += nextGrid[x][y];
@@ -70,7 +70,7 @@ void ofApp::update() {
                     totalAge += nextGrid[x][y];
                 }
                 else {
-                    nextGrid[x][y] = -1; // Stay dead
+                    nextGrid[x][y] = -1; // Stay dead sorry little guy
                 }
             }
 
@@ -83,7 +83,7 @@ void ofApp::update() {
     generationCount++;
     deadCellCount += cellsDiedThisGeneration;
 
-    // Calculate average age
+    // Calculate average age - Im to old for this shit
     averageCellAge = (liveCellCount > 0) ? (static_cast<float>(totalAge) / liveCellCount) : 0;
 
     // Game Over check
